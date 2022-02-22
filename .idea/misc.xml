@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/bg_edittext_main.xml" value="0.2435" />
+        <entry key="app/src/main/res/drawable-v24/bg_edittext_second.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable-v24/bg_else_button.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable-v24/bg_number_button.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable/bg_deittext_normal.xml" value="0.3615" />
+        <entry key="app/src/main/res/drawable/bg_edittext.xml" value="0.3615" />
+        <entry key="app/src/main/res/drawable/bg_edittext_focused.xml" value="0.12032623291015626" />
+        <entry key="app/src/main/res/drawable/bg_edittext_mormal2.xml" value="0.201" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2075" />
+        <entry key="app/src/main/res/layout/activity_calculate_exchange_rate_page.xml" value="0.30995941162109375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.28132476806640627" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
