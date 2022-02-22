@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
+import org.w3c.dom.Text
+import kotlin.math.round
 
-class CalculateExchangeRatePage : AppCompatActivity() {
+class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
     private lateinit var jpyET:EditText
     private lateinit var twdET:EditText
 
@@ -25,6 +30,8 @@ class CalculateExchangeRatePage : AppCompatActivity() {
         val type2TV = findViewById<TextView>(R.id.textView8)
         var changeBool: Boolean = true
         val switchBtn = findViewById<ImageButton>(R.id.imageButton)
+
+
 
         // initalized
         jpyET.text.clear()
@@ -45,22 +52,22 @@ class CalculateExchangeRatePage : AppCompatActivity() {
             }
         }
 
-        // 監聽jpyET，當有數字變化就啟動
-//        jpyET.addTextChangedListener(object: TextWatcher {
+//        jpyET.addTextChangedListener(object : TextWatcher{
 //            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                TODO("Not yet implemented")
+//                println("beforeTextChanged")
 //            }
 //
 //            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-////                println(jpyET.text)
-//                println("1")
+//                println("onTextChanged")
 //            }
 //
 //            override fun afterTextChanged(p0: Editable?) {
-//                TODO("Not yet implemented")
+//                println("afterTextChanged")
 //            }
 //
 //        })
+
+        jpyET.addTextChangedListener(this)
 
     }
 
@@ -94,4 +101,28 @@ class CalculateExchangeRatePage : AppCompatActivity() {
             else -> println("default")
         }
     }
+
+    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+//        println("beforeTextChanged")
+    }
+
+    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        println("onTextChanged")
+        if (jpyET.text.isNullOrEmpty()){
+            twdET.text.clear()
+            return
+        }
+        var jpyNumber: Double = jpyET.text.toString().toDouble()
+        var twdNumber: Double = round(jpyNumber * 0.24135)
+        
+        twdET.setText(twdNumber.toInt().toString())
+
+    }
+
+    override fun afterTextChanged(p0: Editable?) {
+//        println("afterTextChanged")
+    }
+
+
 }
+
