@@ -114,7 +114,7 @@ class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
         }
         var jpyNumber: Double = jpyET.text.toString().toDouble()
         var twdNumber: Double = round(jpyNumber * 0.24135)
-        
+
         twdET.setText(twdNumber.toInt().toString())
 
     }
