@@ -10,12 +10,15 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class CalculateExchangeRatePage : AppCompatActivity() {
-    //    var jpyET = findViewById<EditText>(R.id.editText1)
-//    var twdET = findViewById<EditText>(R.id.editText2)
+    private lateinit var jpyET:EditText
+    private lateinit var twdET:EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate_exchange_rate_page)
+
+        jpyET = findViewById(R.id.editText1)
+        twdET = findViewById(R.id.editText2)
 
         val type1TV = findViewById<TextView>(R.id.textView6)
         val exchangeTV = findViewById<TextView>(R.id.textView7)
@@ -23,8 +26,9 @@ class CalculateExchangeRatePage : AppCompatActivity() {
         var changeBool: Boolean = true
         val switchBtn = findViewById<ImageButton>(R.id.imageButton)
 
-//        jpyET.text.clear()
-//        twdET.text.clear()
+        // initalized
+        jpyET.text.clear()
+        twdET.text.clear()
 
         // 交換幣別按鈕
         switchBtn.setOnClickListener {
@@ -48,7 +52,8 @@ class CalculateExchangeRatePage : AppCompatActivity() {
 //            }
 //
 //            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                println(jpyET.text)
+////                println(jpyET.text)
+//                println("1")
 //            }
 //
 //            override fun afterTextChanged(p0: Editable?) {
@@ -61,32 +66,32 @@ class CalculateExchangeRatePage : AppCompatActivity() {
 
 
     fun clickNumber(view: View) {
-        println(view.tag::class.simpleName)
-//        when (view.tag) {
-//            "1" -> jpyET.text.append("1")
-//            "2" -> jpyET.text.append("2")
-//            "3" -> jpyET.text.append("3")
-//            "4" -> jpyET.text.append("4")
-//            "5" -> jpyET.text.append("5")
-//            "6" -> jpyET.text.append("6")
-//            "7" -> jpyET.text.append("7")
-//            "8" -> jpyET.text.append("8")
-//            "9" -> jpyET.text.append("9")
-//            "0" -> {
-//                if (jpyET.text.isNullOrEmpty()) {
-//                    return
-//                }
-//                jpyET.text.append("0")
-//            }
-//            "clean" -> jpyET.text.clear()
-//            "delete" -> {
-//                if(jpyET.text.isNullOrEmpty()) {
-//                    return
-//                }
-//                jpyET.text.delete(jpyET.text.length-1, jpyET.text.length)
-//            }
-//
-//            else -> println("default")
-//        }
+//        println(view.tag::class.simpleName)
+        when (view.tag) {
+            "1" -> jpyET.text.append("1")
+            "2" -> jpyET.text.append("2")
+            "3" -> jpyET.text.append("3")
+            "4" -> jpyET.text.append("4")
+            "5" -> jpyET.text.append("5")
+            "6" -> jpyET.text.append("6")
+            "7" -> jpyET.text.append("7")
+            "8" -> jpyET.text.append("8")
+            "9" -> jpyET.text.append("9")
+            "0" -> {
+                if (jpyET.text.isNullOrEmpty()) {
+                    return
+                }
+                jpyET.text.append("0")
+            }
+            "clean" -> jpyET.text.clear()
+            "delete" -> {
+                if(jpyET.text.isNullOrEmpty()) {
+                    return
+                }
+                jpyET.text.delete(jpyET.text.length-1, jpyET.text.length)
+            }
+
+            else -> println("default")
+        }
     }
 }
