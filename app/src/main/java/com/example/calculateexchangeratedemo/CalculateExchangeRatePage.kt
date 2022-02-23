@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import org.w3c.dom.Text
+import java.text.DecimalFormat
 import kotlin.math.round
 
 class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
@@ -51,29 +52,11 @@ class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
                 changeBool = true
             }
         }
-
-//        jpyET.addTextChangedListener(object : TextWatcher{
-//            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                println("beforeTextChanged")
-//            }
-//
-//            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                println("onTextChanged")
-//            }
-//
-//            override fun afterTextChanged(p0: Editable?) {
-//                println("afterTextChanged")
-//            }
-//
-//        })
-
         jpyET.addTextChangedListener(this)
-
     }
 
 
     fun clickNumber(view: View) {
-//        println(view.tag::class.simpleName)
         when (view.tag) {
             "1" -> jpyET.text.append("1")
             "2" -> jpyET.text.append("2")
@@ -97,13 +80,12 @@ class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
                 }
                 jpyET.text.delete(jpyET.text.length-1, jpyET.text.length)
             }
-
             else -> println("default")
         }
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//        println("beforeTextChanged")
+
     }
 
     override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -115,12 +97,14 @@ class CalculateExchangeRatePage : AppCompatActivity(), TextWatcher {
         var jpyNumber: Double = jpyET.text.toString().toDouble()
         var twdNumber: Double = round(jpyNumber * 0.24135)
 
-        twdET.setText(twdNumber.toInt().toString())
+//        var df = DecimalFormat("###################")
+        var df = DecimalFormat("0")
+        twdET.setText(df.format(twdNumber))
 
     }
 
     override fun afterTextChanged(p0: Editable?) {
-//        println("afterTextChanged")
+
     }
 
 

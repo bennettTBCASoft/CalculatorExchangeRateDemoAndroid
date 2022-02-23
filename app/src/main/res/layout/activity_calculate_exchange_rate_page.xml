@@ -144,10 +144,12 @@
         android:id="@+id/editText1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:enabled="false"
         android:minHeight="48dp"
-        android:gravity="right"
+        android:lines="1"
+        android:maxLength="19"
+        android:gravity="center_vertical"
+        android:textAlignment="textEnd"
         android:paddingRight="15dp"
         android:text="3,240"
         android:textSize="25sp"
@@ -159,7 +161,7 @@
         app:layout_constraintBottom_toTopOf="@id/editText2"
         app:layout_constraintHorizontal_chainStyle="packed"
         android:layout_marginTop="10dp"
-        />
+        tools:ignore="RtlCompat" />
 
     <EditText
         android:id="@+id/editText2"
@@ -167,9 +169,11 @@
         android:layout_height="35dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_edittext_second"
-        android:ems="10"
         android:enabled="false"
-        android:gravity="right"
+        android:lines="1"
+        android:maxLength="30"
+        android:gravity="center_vertical"
+        android:textAlignment="textEnd"
         android:paddingRight="15dp"
         android:text="782"
         android:textColor="@color/black"
@@ -177,7 +181,30 @@
         app:layout_constraintEnd_toStartOf="@+id/left_guideline"
         app:layout_constraintStart_toStartOf="@+id/right_guideline"
         app:layout_constraintTop_toBottomOf="@id/editText1"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JPY"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/editText1"
+        app:layout_constraintStart_toStartOf="@id/editText1"
+        app:layout_constraintBottom_toBottomOf="@id/editText1"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TWD"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/editText2"
+        app:layout_constraintStart_toStartOf="@id/editText2"
+        app:layout_constraintBottom_toBottomOf="@id/editText2"
+        android:layout_marginLeft="20dp"
+        />
 
     <Button
         android:id="@+id/button1"
